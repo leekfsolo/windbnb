@@ -7,6 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 60px;
 
     .logo {
       width: 100px;
@@ -68,15 +69,11 @@
     }
   }
 
-  #main {
-    height: calc(100vh - 120px);
-  }
-
   .footer {
     text-align: center;
     color: colors.$gray-3;
     font-size: 14px;
-    margin-top: auto;
+    margin-top: 100px;
 
     .username {
       font-weight: 700;

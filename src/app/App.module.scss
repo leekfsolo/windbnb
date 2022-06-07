@@ -1,0 +1,99 @@
+@use "../common/ui/assets/colors";
+
+.headings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: colors.$black-1;
+  }
+
+  .amount {
+    span {
+      font-size: 14px;
+      font-weight: 500;
+      color: colors.$black-2;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .card {
+    width: 30%;
+    margin-bottom: 50px;
+    cursor: pointer;
+
+    .card__img {
+      width: 100%;
+
+      img {
+        width: 100%;
+        border-radius: 24px;
+        transform: scale(1);
+        transition: transform 0.1s ease-in;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .card__content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 15px 0 12px 0;
+      min-height: 30px;
+
+      .card__info {
+        display: flex;
+        align-items: center;
+
+        .card__tag {
+          font-weight: 700;
+          font-size: 12px;
+          padding: 6px;
+          border: 1px solid colors.$black-2;
+          border-radius: 12px;
+          margin-right: 10px;
+          text-transform: uppercase;
+        }
+
+        .card__desc {
+          font-weight: 500;
+          font-size: 14px;
+          color: colors.$gray-3;
+        }
+      }
+
+      .card__rating {
+        position: relative;
+        font-weight: 500;
+        font-size: 14px;
+        color: colors.$black-2;
+
+        svg {
+          fill: colors.$orange;
+          position: absolute;
+          top: -1px;
+          left: -23px;
+        }
+      }
+    }
+
+    .card__title {
+      font-weight: 600;
+      font-size: 16px;
+      color: colors.$black-1;
+    }
+  }
+}

@@ -3,13 +3,14 @@ import ReactDOM from "react-dom/client";
 import MainLayout from "./common/ui/layout/main-layout";
 
 import "./common/ui/assets/index.scss";
+import App from "./app";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <MainLayout>
-    <div></div>
+    <App />
   </MainLayout>
 );
 
