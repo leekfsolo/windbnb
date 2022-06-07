@@ -14,7 +14,7 @@ const MainLayout: FC<Props> = (props: Props) => {
   return (
     <div className={styles.container}>
       <Header />
-      {children}
+      <main id={styles.main}>{children}</main>
       <Footer />
     </div>
   );
