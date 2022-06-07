@@ -1,10 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import MainLayout from "./common/ui/layout/main-layout";
+
+import "./common/ui/assets/index.scss";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-root.render(<div></div>);
+root.render(
+  <MainLayout>
+    <div></div>
+  </MainLayout>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
