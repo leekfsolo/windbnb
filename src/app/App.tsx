@@ -12,7 +12,7 @@ import item6 from "../common/ui/assets/images/6.jpg";
 import styles from "./App.module.scss";
 
 const App = () => {
-  const [cardItems, setCardItems] = useState<Array<CardItem>>([
+  const [cardItems] = useState<Array<CardItem>>([
     {
       img: item1,
       tag: "super host",

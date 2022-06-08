@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, useState } from "react";
 import Footer from "./footer";
 import Header from "./header";
 
@@ -11,9 +11,11 @@ interface Props {
 const MainLayout: FC<Props> = (props: Props) => {
   const { children } = props;
 
+  const [isExpand, setIsExpand] = useState<boolean>(true);
+
   return (
-    <div className={styles.container}>
-      <Header />
+    <div className={`${styles.container} ${isExpand ? styles.expand : ""}`}>
+      <Header isExpand={isExpand} setIsExpand={setIsExpand} />
       <main id={styles.main}>{children}</main>
       <Footer />
     </div>

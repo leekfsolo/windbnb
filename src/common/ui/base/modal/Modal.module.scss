@@ -1,0 +1,11 @@
+@use "../../assets/colors";
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: colors.$white;
+  width: 100%;
+  min-height: 460px;
+  z-index: 100;
+}

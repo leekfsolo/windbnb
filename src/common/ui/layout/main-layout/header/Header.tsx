@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { FC } from "react";
 
-import { ReactComponent as Search } from "../../../assets/images/search.svg";
 import Logo from "../../../assets/images/logo.png";
+import Modal from "../../../base/modal";
 import styles from "../MainLayout.module.scss";
+import SearchBar from "./searchBar/SearchBar";
 
-const Header = () => {
-  const [isExpand, setIsExpand] = useState<boolean>(false);
+interface Props {
+  isExpand: boolean;
+  setIsExpand: (isExpand: boolean) => void;
+}
+
+const Header: FC<Props> = (props: Props) => {
+  const { isExpand, setIsExpand } = props;
 
   return (
     <header className={styles.header}>
@@ -13,27 +19,13 @@ const Header = () => {
         <img src={Logo} alt="" />
       </nav>
 
-      <div className={styles.searchBar} onClick={() => setIsExpand(false)}>
-        <div className={styles.searchLocation}>
-          <input
-            type="text"
-            name="location"
-            defaultValue="Helsinki, Finland"
-            placeholder="Add locations"
-          />
-        </div>
-        <div className={styles.searchGuests}>
-          <input type="text" name="guests" placeholder="Add guests" />
-        </div>
-        <div className={styles.searchBtn}>
-          <button>
-            <span>
-              <Search />
-            </span>
-            {isExpand ? <span>Search</span> : ""}
-          </button>
-        </div>
-      </div>
+      {isExpand ? (
+        <Modal type="searchBar">
+          <SearchBar isExpand={isExpand} setIsExpand={setIsExpand} />
+        </Modal>
+      ) : (
+        <SearchBar isExpand={isExpand} setIsExpand={setIsExpand} />
+      )}
     </header>
   );
 };
