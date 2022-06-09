@@ -11,10 +11,13 @@ interface Props {
 const MainLayout: FC<Props> = (props: Props) => {
   const { children } = props;
 
-  const [isExpand, setIsExpand] = useState<boolean>(true);
+  const [isExpand, setIsExpand] = useState<boolean>(false);
 
   return (
-    <div className={`${styles.container} ${isExpand ? styles.expand : ""}`}>
+    <div
+      className={`${styles.container} ${isExpand ? styles.expand : ""}`}
+      onClick={() => setIsExpand(false)}
+    >
       <Header isExpand={isExpand} setIsExpand={setIsExpand} />
       <main id={styles.main}>{children}</main>
       <Footer />

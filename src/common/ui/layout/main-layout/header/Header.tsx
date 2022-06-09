@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 
 import Logo from "../../../assets/images/logo.png";
 import Modal from "../../../base/modal";
@@ -12,6 +12,16 @@ interface Props {
 
 const Header: FC<Props> = (props: Props) => {
   const { isExpand, setIsExpand } = props;
+  const [inputFocus, setInputFocus] = useState<string>("location");
+
+  const SearchBarComp = (
+    <SearchBar
+      isExpand={isExpand}
+      setIsExpand={setIsExpand}
+      inputFocus={inputFocus}
+      setInputFocus={setInputFocus}
+    />
+  );
 
   return (
     <header className={styles.header}>
@@ -20,11 +30,11 @@ const Header: FC<Props> = (props: Props) => {
       </nav>
 
       {isExpand ? (
-        <Modal type="searchBar">
-          <SearchBar isExpand={isExpand} setIsExpand={setIsExpand} />
+        <Modal type="searchBar" inputFocus={inputFocus}>
+          {SearchBarComp}
         </Modal>
       ) : (
-        <SearchBar isExpand={isExpand} setIsExpand={setIsExpand} />
+        SearchBarComp
       )}
     </header>
   );

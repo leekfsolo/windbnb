@@ -8,4 +8,92 @@
   width: 100%;
   min-height: 460px;
   z-index: 100;
+  padding: 90px;
+
+  .content {
+    display: flex;
+    width: 100%;
+
+    .content__location,
+    .content__guests {
+      width: 33%;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    .content__location {
+      ul {
+        list-style-type: none;
+        margin: 40px 0 0 32px;
+        padding: 0;
+        font-family: "Mulish", sans-serif;
+        font-size: 14px;
+        color: colors.$black-2;
+
+        li {
+          margin-bottom: 30px;
+          display: flex;
+          align-items: center;
+
+          svg {
+            margin-right: 10px;
+            fill: colors.$black-2;
+          }
+        }
+      }
+    }
+    .content__guests {
+      padding: 32px 0 0 32px;
+
+      .adults,
+      .children {
+        font-family: "Mulish", sans-serif;
+        font-size: 14px;
+
+        h2 {
+          margin: 0;
+          color: colors.$black-1;
+        }
+
+        p {
+          margin: 0;
+          color: colors.$gray-4;
+        }
+
+        .counter {
+          margin-top: 12px;
+          display: flex;
+          align-items: center;
+
+          span {
+            display: inline-block;
+            margin: 0 15px;
+          }
+
+          button {
+            background: transparent;
+            border: 1px solid colors.$gray-3;
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+
+            &.decrement {
+              padding: 2px 7px;
+            }
+
+            &.increment {
+              padding-top: 3px;
+            }
+          }
+        }
+      }
+      .adults {
+        margin-bottom: 50px;
+      }
+    }
+  }
 }

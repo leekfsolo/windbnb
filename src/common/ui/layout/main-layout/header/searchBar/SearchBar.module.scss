@@ -4,7 +4,6 @@
   position: relative;
   width: 300px;
   border-radius: 16px;
-  padding: 0 15px;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
@@ -12,24 +11,37 @@
   .searchLocation,
   .searchGuests {
     width: 45%;
+    font-family: "Mulish", sans-serif;
+
+    label {
+      font-weight: 800;
+      font-size: 9px;
+      color: colors.$black-1;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      margin-left: 32px;
+    }
 
     input {
       width: 100%;
       border: none;
       outline: none;
-      font-family: "Mulish", sans-serif;
       font-size: 14px;
-      padding-right: 15px;
+      padding: 0 15px;
     }
   }
 
   .searchGuests {
+    width: 40%;
     padding: 15px 0;
     border-left: 1px solid colors.$gray-5;
     border-right: 1px solid colors.$gray-5;
 
+    label {
+    }
+
     input {
-      padding-left: 16px;
+      padding-left: 15px;
     }
   }
 
@@ -43,6 +55,7 @@
       position: absolute;
       top: 30%;
       right: 3px;
+      cursor: pointer;
 
       svg {
         fill: colors.$orange;
@@ -52,11 +65,61 @@
 
   &.expand {
     z-index: 100;
+    width: 100%;
 
     .searchLocation,
     .searchGuests,
     .searchBtn {
       width: calc(100% / 3);
+      height: 100%;
+      padding: 7px 0 !important;
+
+      &.active {
+        border: 2px solid colors.$black-2;
+        border-radius: 16px;
+      }
+
+      input {
+        margin: 0 0 0 10px;
+        padding: 0 0 0 22px;
+        width: 90%;
+      }
+    }
+
+    .searchBtn {
+      padding: 3px 0 !important;
+      border: none;
+    }
+
+    .searchBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+
+      button {
+        position: static;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 25px;
+        background-color: colors.$orange;
+        border-radius: 16px;
+        color: colors.$white;
+        font-weight: 700;
+        font-size: 14px;
+
+        &:active {
+          transform: scale(0.98);
+        }
+
+        svg {
+          position: relative;
+          top: 2px;
+          margin-right: 5px;
+          fill: colors.$white;
+        }
+      }
     }
   }
 }

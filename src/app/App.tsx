@@ -63,8 +63,8 @@ const App = () => {
       </div>
 
       <div className={styles.content}>
-        {cardItems.map((item) => (
-          <section className={styles.card}>
+        {cardItems.map((item, idx) => (
+          <section className={styles.card} key={idx}>
             <div className={styles.card__img}>
               <img alt="" src={item.img} />
             </div>
