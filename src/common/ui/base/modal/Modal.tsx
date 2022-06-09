@@ -27,7 +27,7 @@ const Modal: FC<Props> = (props: Props) => {
     "Oulu, Finland",
     "Vaasa, Finland",
   ]);
-  const is_XS_size = width <= 375;
+  const is_XS_size = width <= 500;
 
   const decrementHandler = (type: string) => {
     if (type === "adults" && adults > 0) setAdults(adults - 1);
