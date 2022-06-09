@@ -45,3 +45,18 @@
     }
   }
 }
+
+@media only screen and (max-width: 375px) {
+  .container {
+    padding: 20px 12px;
+
+    .header {
+      display: block;
+      margin-bottom: 35px;
+
+      .logo {
+        margin-bottom: 35px;
+      }
+    }
+  }
+}

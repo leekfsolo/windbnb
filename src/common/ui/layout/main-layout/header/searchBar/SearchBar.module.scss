@@ -37,9 +37,6 @@
     border-left: 1px solid colors.$gray-5;
     border-right: 1px solid colors.$gray-5;
 
-    label {
-    }
-
     input {
       padding-left: 15px;
     }
@@ -119,6 +116,37 @@
           margin-right: 5px;
           fill: colors.$white;
         }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .searchBar {
+    margin: 0 auto;
+
+    &.expand {
+      display: flex;
+      flex-direction: column;
+      position: static;
+
+      .searchGuests,
+      .searchLocation {
+        width: 100%;
+        border: none !important;
+      }
+
+      .searchGuests,
+      .searchGuests.active {
+        border-top: 1px solid colors.$gray-5 !important;
+        border-radius: 0;
+      }
+
+      .searchBtn {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }

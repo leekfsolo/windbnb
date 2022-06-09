@@ -97,3 +97,18 @@
     }
   }
 }
+
+@media only screen and (max-width: 375px) {
+  .headings {
+    margin-bottom: 24px;
+  }
+
+  .content {
+    flex-direction: column;
+
+    .card {
+      width: 100%;
+      margin-bottom: 32px;
+    }
+  }
+}

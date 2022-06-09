@@ -30,7 +30,11 @@ const Header: FC<Props> = (props: Props) => {
       </nav>
 
       {isExpand ? (
-        <Modal type="searchBar" inputFocus={inputFocus}>
+        <Modal
+          type="searchBar"
+          inputFocus={inputFocus}
+          setIsExpand={setIsExpand}
+        >
           {SearchBarComp}
         </Modal>
       ) : (
